@@ -1,4 +1,4 @@
-//  When the array is sorted: TWO SUM BECOMES EASY ---> remember return new int[]{left,right}=========================================================================================================================
+//  When the array is sorted: TWO SUM BECOMES EASY ---> remember return new int[]{left,right}=========LEETCODE DOESNT WORK================================================================================================================
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         int left=0;
@@ -28,4 +28,47 @@ public static void main(String[] args){
             System.out.println("No solution found");
         }
 }
-//===================================================================================================================================================================================================================
+//===========================================================================  WITH ARRAYLIST without return new[int]{left,right}============LEETCODE DOESNT WORK==========================================================================================================================
+class Solution{
+    public List<Integer>twosum(int[] nums, int target){
+        int left=0;
+        int right=nums.length-1;
+        List<Integer>result=new ArrayList<>();
+      while(left<right){
+            int sum= nums[left]+nums[right];
+            if(sum==target){
+                result.add(left);
+                result.add(right);
+                return result;
+            }else if(sum<target){
+                left++;
+            }else{
+                right--;
+            }   
+    } return new ArrayList<>();
+    }
+}
+    
+// Unsorted Array
+import java.util.*;
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+
+        Map<Integer, Integer> ansmap = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+
+            int num = nums[i];
+            int complement = target - num;
+
+            if (ansmap.containsKey(complement)) {
+                return new int[]{ansmap.get(complement), i};
+            }
+
+            ansmap.put(num, i);
+        }
+
+        return new int[]{};
+    }
+}
