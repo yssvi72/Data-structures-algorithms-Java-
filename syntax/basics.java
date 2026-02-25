@@ -39,7 +39,27 @@ class Solution {
         }
     }
 }
-      
+//=========================================DECLARING NUMS AS GLOBAL==========================================================================================================================================================================
+class Solution {
+    List<List<Integer>>ans = new ArrayList<>(); //Global variable 
+    int[] nums;   //Global variable
+    public List<List<Integer>>subsets(int[] nums){
+        this.nums = nums; //Class variable 
+        backtrack(0,new ArrayList<>(),nums);
+        return ans;
+    }
+    public void backtrack(int start, List<Integer>path, int[]nums){
+        ans.add(new ArrayList<>(path));
+        for(int i=start;i<nums.length;i++){
+           path.add(nums[i]);
+           backtrack(i+1,path,nums);
+           path.remove(path.size()-1);
+    }
+    }
+}
+        
+        
+
     
     
     
