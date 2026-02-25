@@ -57,7 +57,9 @@ class Solution {
     }
     }
 }
-        
+
+// If u are returning integer in Java 
+return new TYPE[]{values}; //here type is primitive datatype like int
         
 
     
