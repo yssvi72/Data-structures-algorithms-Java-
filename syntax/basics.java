@@ -59,8 +59,12 @@ class Solution {
 }
 
 // If u are returning integer in Java 
-return new TYPE[]{values}; //here type is primitive datatype like int
-        
+return new TYPE[]{values}; //here type is primitive datatype like int  like in two sum : return new int[]{left,right};
+//OR can do this
+List<Integer> result = new ArrayList<>();
+result.add(left);
+result.add(right);
+return result;
 
     
     
